@@ -1,0 +1,250 @@
+
+body {
+	display:flex; flex-direction:row; justify-content:center;
+	
+  }
+
+.app { 
+	transform: rotate(0deg);
+	width:400px;
+	height:700px;
+	position:absolute;
+
+}
+.background { 
+	background-color: #BFd6d8;
+	width:400px;
+	height:700px;
+	position:absolute;
+	left:2.430694580078125px;
+	top:2.4306981563568115px;
+	border-top-left-radius:28.19609832763672px;
+	border-top-right-radius:28.19609832763672px;
+	border-bottom-left-radius:28.19609832763672px;
+	border-bottom-right-radius:28.19609832763672px;
+	border-color: rgb(131, 119, 119);
+	 border-style: solid;
+}
+.title { 
+	transform: rotate(0deg);
+	width:250px;
+	height:45px;
+	position:absolute;
+	left:70;
+	top:22.5px;
+
+}
+
+.infobox2 { 
+	width:350px;
+	height:100px;
+	position:absolute;
+	left:25px;
+	top:98px;
+	border-bottom-right-radius:28.19609832763672px;
+
+}
+.extrainfo { 
+	background-color:rgba(226.31249696016312, 222.54062175750732, 222.54062175750732, 1);
+	width:350px;
+	height:120px;
+	position:absolute;
+	left:-11px;
+	top:0px;
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
+	border-bottom-right-radius:10px;
+	/*border-color: rgb(103, 100, 100);
+	border-style: solid;*/
+	padding: 8px;	
+
+	
+}
+.extrapoke { 
+	width:245px;
+	height:245px;
+	position:absolute;
+	left:75.5px;
+	top:227.5px;
+}
+.pokeball { 
+	transform: rotate(0deg);
+	width:200px;
+	height:200px;
+	position:absolute;
+	left:25px;
+	top:10%;
+	background-image:url(images/pokeball.svg);
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.infobox1 { 
+	width:360px;
+	height:150px;
+	position:absolute;
+	left:15px;
+	top:450.5px;
+	margin:10px;
+	
+	
+}
+.basicinfo { 
+	background-color:rgba(226.31249696016312, 222.54062175750732, 222.54062175750732, 1);
+	width:220px;
+	height:150px;
+	position:absolute;
+	left:-5px;
+	top:0px;
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
+	border-bottom-right-radius:10px;
+	border-bottom-right-radius:10px;
+	border-color: rgb(103, 100, 100);
+	/*border-style: solid; */
+}
+.sprite { 
+	background-color:rgba(226.31249696016312, 222.54062175750732, 222.54062175750732, 1);
+	width:125px;
+	height:125px;
+	position:absolute;
+	left:227px;
+	top:0px;
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
+	border-bottom-right-radius:10px;
+	border-color: rgb(216, 205, 205);
+	border-style: solid;
+	padding-left:5px;
+}
+
+
+
+
+.srch { 
+	width:350px;
+	height:45px;
+	position:absolute;
+	left:25px;
+	top:632.5px;
+	margin: 1px;
+}
+.button { 
+	background-color:rgba(244.3749949336052, 152.7343699336052, 152.7343699336052, 1);
+	width:45px;
+	height:45px;
+	position:absolute;
+	left: 86%;
+	top:0px;
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
+}
+.searchbar { 
+	background-color:rgba(226.31249696016312, 222.54062175750732, 222.54062175750732, 1);
+	width:291px;
+	height:45px;
+	position:absolute;
+	left:1%;
+	top:0px;
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+	border-bottom-left-radius:10px;
+	border-bottom-right-radius:10px;
+
+	cursor: pointer;
+}
+
+
+h1 {
+	font-family: 'Press Start 2P', cursive;
+	font-size: 22.5px;
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 15px
+  }
+button {
+	font-family: 'Press Start 2P', cursive;
+	font-size: 10px;
+	text-align: center;
+	padding: 10px;
+	cursor: pointer;
+  }
+
+
+  
+
+.button:hover {
+	background-color: hsl(120, 38%, 69%);
+}
+
+.button:active {
+	background-color: hsl(122, 26%, 56%);
+	box-shadow: 0 0.1px #666;
+	transform: translateY(0.3px);
+	border: 1px solid #666;
+}
+  
+
+  input {
+	font-family: 'Press Start 2P', cursive;
+	font-size: 14px;
+	text-align: left;
+	padding: 10px;
+	height:100%;
+	width:100%;
+	border: 000
+	
+  }
+
+
+  p {
+	font-family: 'Press Start 2P', cursive;
+	text-align: left;
+	font-size: 8px;
+	line-height: 125%;
+	padding:5px; 
+	text-overflow: ellipsis; }
+
+.imgname {  
+	font-family: 'Press Start 2P', cursive;
+	text-align: center;
+	font-size: 8px;
+	line-height: 125%;
+	padding:10px; 
+	text-overflow: ellipsis; }
+
+.infobox1txt {
+	font-family: 'Press Start 2P', cursive;
+	text-align: left;
+	font-size: 8px;
+	line-height: 125%;
+	margin:10px;  
+}
+
+  img {
+    width: 100%; /* or any custom size */
+    height: 100%; 
+	margin: px ;
+	}
+
+  
+
+.square {
+    height:110px;
+    width: 110px;
+	padding:5%}
+
+.containersrch {
+	border-color: #666;}
+
+
+
+form {
+	background-color: rgb(165, 201, 214);}

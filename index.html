@@ -1,0 +1,92 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Pokédex</title>
+  <meta name="description" content="Pokedex API">
+  <meta name="author" content="Geeta Chohan">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" >
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+<body>
+  <div class=app>
+    <div class=background>
+      <div class=title> <h1> Pokémon API</h1>
+      </div>
+      <div class=infobox2>
+        <div class="extrainfo"> <p> Welcome to the Pokédex! <br>
+          <br> You can use it to search for Pokémons stats to help you in battle. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates non repellendus cum ipsa saepe dicta itaque incidunt eum ab iusto, nisi, libero a possimus! Quam iste tempora laborum incidunt doloribus.
+          Good luck!</p></div>
+      </div>
+      <div class=extrapoke>
+        <div class="pokeball"></div>
+      </div>
+      <div class=infobox1>
+        <div class="basicinfo"><p id ='prediction' class="infobox1txt">Stats will be displayed here in infobox1. Search below to start! 
+      
+        </p></div>
+        <div class="sprite">
+          <div class="square">
+            <img src="images/pikachu.png" title="Pikachu">
+            <p class="imgname">Pikachu</p>
+        </div>
+        </div>
+      </div>
+      <div class=srch>
+        <div claa="containerstch">
+
+
+          <form id = "form" class = 'searchcontainer' action='' method="post" name="'form">
+            <input id= "input" type="text" class = 'searchbar' name="search" placeholder="Search Pokémon ...">
+            <button id="submit" class=button type="submit" > >> </button>
+          </form>
+
+        </div> 
+      </div>
+    </div>    
+  </div>
+
+  <script>
+    $(document).ready(function () {
+        // click on button submit
+        $("#submit").on('click', function (e) {
+            e.preventDefault();
+            // send ajax
+
+            const json_data = {
+            "name": $("#input").val()
+            }
+
+            console.log(json_data)
+
+            $.ajax({
+                url: 'https://europe-west2-static-forest-290715.cloudfunctions.net/pokedex-function', // url where to submit the request
+                type: "POST",
+                dataType: 'json', 
+                contentType:'application/json',
+                data: JSON.stringify(json_data), 
+                success: function (result) {
+                    $('#prediction').text(result.prediction)
+                    console.log(result)
+                },
+                error: function (xhr, resp, text) {
+                    console.log(xhr, resp, text);
+                },
+                beforeSend:function(){
+                    $('#prediction').text('');
+                }
+            })
+        });
+    });
+</script>
+ 
+</body>
+
+</html>
+
+
