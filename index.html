@@ -19,7 +19,7 @@
       <div class=title> <h1> Pokémon API</h1>
       </div>
       <div class=infobox2>
-        <div class="extrainfo"> <p> Welcome to the Pokédex! <br>
+        <div class="extrainfo" > <p id="firstbox"> Welcome to the Pokédex! <br>
           <br> You can use it to search for Pokémons stats to help you in battle. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates non repellendus cum ipsa saepe dicta itaque incidunt eum ab iusto, nisi, libero a possimus! Quam iste tempora laborum incidunt doloribus.
           Good luck!</p></div>
       </div>
@@ -32,8 +32,8 @@
         </p></div>
         <div class="sprite">
           <div class="square">
-            <img src="images/pikachu.png" title="Pikachu">
-            <p class="imgname">Pikachu</p>
+            <img src="images/who.png">
+            <p class="imgname"></p>
         </div>
         </div>
       </div>
@@ -71,8 +71,13 @@
                 contentType:'application/json',
                 data: JSON.stringify(json_data), 
                 success: function (result) {
-                    $('#prediction').text(result.prediction)
+                   
+                      $("#firstbox").text( "This is a " + result.name + "! " + "It has a base attack of " + result.atk + " and a defense of " + result.def + "." + " \n It has a base HP of " + result.hp + " and a base speed of " + result.spd + ".");
+                  
+                      $('.imgname').text(result.name + ' pokdex#:' + result.index); 
                     console.log(result)
+                    $("img").attr("src", ("https://img.pokemondb.net/artwork/" + result.name + ".jpg").toLowerCase())
+                      console.log($(this))
                 },
                 error: function (xhr, resp, text) {
                     console.log(xhr, resp, text);
@@ -84,6 +89,15 @@
         });
     });
 </script>
+
+<script>
+  $(document).ready(function(){
+      $("img").click(function(){
+          // Change src attribute of image
+          $(this).attr("src", "images/card-front.jpg");
+      });    
+  });
+  </script>
  
 </body>
 

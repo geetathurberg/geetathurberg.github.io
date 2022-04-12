@@ -103,11 +103,11 @@ body {
 	border-bottom-right-radius:10px;
 	border-bottom-right-radius:10px;
 	border-bottom-right-radius:10px;
-	border-color: rgb(103, 100, 100);
+	border-color: rgba(103, 100, 100, 0);
 	/*border-style: solid; */
 }
 .sprite { 
-	background-color:rgba(226.31249696016312, 222.54062175750732, 222.54062175750732, 1);
+	background-color:#ffffff;
 	width:125px;
 	height:125px;
 	position:absolute;
@@ -118,7 +118,7 @@ body {
 	border-bottom-left-radius:10px;
 	border-bottom-right-radius:10px;
 	border-bottom-right-radius:10px;
-	border-color: rgb(216, 205, 205);
+	border-color: rgba(216, 205, 205, 0);
 	border-style: solid;
 	padding-left:5px;
 }
