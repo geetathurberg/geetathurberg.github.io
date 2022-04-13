@@ -76,8 +76,9 @@
                   
                       $('.imgname').text(result.name + ' pokdex#:' + result.index); 
                     console.log(result)
-                    $("img").attr("src", ("https://img.pokemondb.net/artwork/" + result.name + ".jpg").toLowerCase())
+                    $("img").attr("src", ("https://img.pokemondb.net/artwork/large/" + (result.name).replace(". ","-").replace(" ","-").toLowerCase() + ".jpg").toLowerCase())
                       console.log($(this))
+                      console.log(result.name.replace(". ","_").toLowerCase())
                 },
                 error: function (xhr, resp, text) {
                     console.log(xhr, resp, text);
@@ -90,14 +91,6 @@
     });
 </script>
 
-<script>
-  $(document).ready(function(){
-      $("img").click(function(){
-          // Change src attribute of image
-          $(this).attr("src", "images/card-front.jpg");
-      });    
-  });
-  </script>
  
 </body>
 
