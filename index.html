@@ -9,92 +9,99 @@
 
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" >
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
+
 <body>
   <div class=app>
     <div class=background>
-      <div class=title> <h1> Pokémon API</h1>
+      <div class=title>
+        <h1> Pokémon API</h1>
       </div>
       <div class=infobox2>
-        <div class="extrainfo" > <p id="firstbox"> Welcome to the Pokédex! <br>
-          <br> You can use it to search for Pokémons stats to help you in battle. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates non repellendus cum ipsa saepe dicta itaque incidunt eum ab iusto, nisi, libero a possimus! Quam iste tempora laborum incidunt doloribus.
-          Good luck!</p></div>
+        <div class="extrainfo">
+          <p id="firstbox"> Welcome to the Pokédex! <br>
+            <br> You can use it to search for Pokémons stats to help you in battle. Lorem ipsum dolor, sit amet
+            consectetur adipisicing elit. Voluptates non repellendus cum ipsa saepe dicta itaque incidunt eum ab iusto,
+            nisi, libero a possimus! Quam iste tempora laborum incidunt doloribus.
+            Good luck!
+          </p>
+        </div>
       </div>
       <div class=extrapoke>
         <div class="pokeball"></div>
       </div>
       <div class=infobox1>
-        <div class="basicinfo"><p id ='prediction' class="infobox1txt">Stats will be displayed here in infobox1. Search below to start! 
-      
-        </p></div>
+        <div class="basicinfo">
+          <p id='prediction' class="infobox1txt">Stats will be displayed here in infobox1. Search below to start!
+
+          </p>
+        </div>
         <div class="sprite">
           <div class="square">
             <img src="images/who.png">
             <p class="imgname"></p>
-        </div>
+          </div>
         </div>
       </div>
       <div class=srch>
         <div claa="containerstch">
 
 
-          <form id = "form" class = 'searchcontainer' action='' method="post" name="'form">
-            <input id= "input" type="text" class = 'searchbar' name="search" placeholder="Search Pokémon ...">
-            <button id="submit" class=button type="submit" > >> </button>
+          <form id="form" class='searchcontainer' action='' method="post" name="'form">
+            <input id="input" type="text" class='searchbar' name="search" placeholder="Search Pokémon ...">
+            <button id="submit" class=button type="submit"> >> </button>
           </form>
 
-        </div> 
+        </div>
       </div>
-    </div>    
+    </div>
   </div>
 
   <script>
     $(document).ready(function () {
-        // click on button submit
-        $("#submit").on('cursor', 'pointer');
-        $(document).on('click', '#submit'), function (e) {
-            e.preventDefault();
-            // send ajax
+      // click on button submit
+      $("#submit").on('cursor', 'pointer');
+      $(document).on('click', '#submit'), function (e) {
+        e.preventDefault();
+        // send ajax
 
-            const json_data = {
-            "name": $("#input").val()
-            }
+        const json_data = {
+          "name": $("#input").val()
+        }
 
-            console.log(json_data)
+        console.log(json_data)
 
-            $.ajax({
-                url: 'https://europe-west2-static-forest-290715.cloudfunctions.net/pokedex-function', // url where to submit the request
-                type: "POST",
-                dataType: 'json', 
-                contentType:'application/json',
-                data: JSON.stringify(json_data), 
-                success: function (result) {
-                   
-                      $("#firstbox").text( "This is a " + result.name + "! " + "It has a base attack of " + result.atk + " and a defense of " + result.def + "." + " \n It has a base HP of " + result.hp + " and a base speed of " + result.spd + ".");
-                  
-                      $('.imgname').text(result.name + ' pokdex#:' + result.index); 
-                    console.log(result)
-                    $("img").attr("src", ("https://img.pokemondb.net/artwork/large/" + (result.name).replace(". ","-").replace(" ","-").toLowerCase() + ".jpg").toLowerCase())
-                      console.log($(this))
-                      console.log(result.name.replace(". ","_").toLowerCase())
-                },
-                error: function (xhr, resp, text) {
-                    console.log(xhr, resp, text);
-                },
-                beforeSend:function(){
-                    $('#prediction').text('');
-                }
-            })
-        });
+        $.ajax({
+          url: 'https://europe-west2-static-forest-290715.cloudfunctions.net/pokedex-function', // url where to submit the request
+          type: "POST",
+          dataType: 'json',
+          contentType: 'application/json',
+          data: JSON.stringify(json_data),
+          success: function (result) {
+
+            $("#firstbox").text("This is a " + result.name + "! " + "It has a base attack of " + result.atk + " and a defense of " + result.def + "." + " \n It has a base HP of " + result.hp + " and a base speed of " + result.spd + ".");
+
+            $('.imgname').text(result.name + ' pokdex#:' + result.index);
+            console.log(result)
+            $("img").attr("src", ("https://img.pokemondb.net/artwork/large/" + (result.name).replace(". ", "-").replace(" ", "-").toLowerCase() + ".jpg").toLowerCase())
+            console.log($(this))
+            console.log(result.name.replace(". ", "_").toLowerCase())
+          },
+          error: function (xhr, resp, text) {
+            console.log(xhr, resp, text);
+          },
+          beforeSend: function () {
+            $('#prediction').text('');
+          }
+        })
+      };
     });
-</script>
+  </script>
 
- 
+
 </body>
 
 </html>
-
-
