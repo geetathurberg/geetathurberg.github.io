@@ -57,7 +57,7 @@
         $("#submit").on("click tap touchstart", function (e) {
             e.preventDefault();
             // send ajax
-
+            $("#prediction").text( "This is a box"); 
             const json_data = {
             "name": $("#input").val()
             }
