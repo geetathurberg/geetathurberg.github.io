@@ -57,13 +57,12 @@
         $("#submit").on("click tap touchstart", function (e) {
             e.preventDefault();
             // send ajax
-            $("#prediction").text( "This is a box - the text is changing at the start of the function to see if it being triggered. Having Issues with mobile devices"); 
             const json_data = {
             "name": $("#input").val()
             }
 
             console.log(json_data)
-
+            
             $.ajax({
                 url: 'https://europe-west2-static-forest-290715.cloudfunctions.net/pokedex-function', // url where to submit the request
                 type: "POST",
@@ -71,7 +70,8 @@
                 contentType:'application/json',
                 data: JSON.stringify(json_data), 
                 success: function (result) {
-                   
+                      $("#prediction").text( "This is a box -  Having Issues with mobile devices"); 
+
                       $("#firstbox").text( "This is a " + result.name + "! " + "It has a base attack of " + result.atk + " and a defense of " + result.def + "." + " \n It has a base HP of " + result.hp + " and a base speed of " + result.spd + ".");
                   
                       $('.imgname').text(result.name + ' pokdex#:' + result.index); 
