@@ -54,7 +54,7 @@
   <script>
     $(document).ready(function () {
         // click on button submit 
-        $("#submit").on("click tap touchstart", function (e) {
+        $("#submit").on("click tap touchstart mousedown", function (e) {
             e.preventDefault();
             // send ajax
             const json_data = {
